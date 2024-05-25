@@ -1,15 +1,24 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { searchMovies } from '../../api/tmdb';
 import MovieList from '../../components/MovieList/MovieList';
 import styles from './moviesPage.module.css';
 
 const MoviesPage = () => {
-  const [query, setQuery] = useState('');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const queryParam = searchParams.get('query') || '';
+  const [query, setQuery] = useState(queryParam);
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(null);
 
+  useEffect(() => {
+    if (queryParam) {
+      handleSearch();
+    }
+  }, [queryParam]);
+
   const handleSearch = async e => {
-    e.preventDefault();
+    if (e) e.preventDefault();
     if (query.trim() === '') {
       setError('Please enter a search term');
       return;
@@ -18,13 +27,14 @@ const MoviesPage = () => {
       const results = await searchMovies(query);
       setMovies(results);
       setError(null);
+      setSearchParams({ query });
     } catch (error) {
       setError('Failed to fetch movies');
     }
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       <h1>Search Movies</h1>
       <form onSubmit={handleSearch} className={styles.searchForm}>
         <input

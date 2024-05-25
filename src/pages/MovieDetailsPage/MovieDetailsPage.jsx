@@ -32,7 +32,11 @@ const MovieDetailsPage = () => {
   }, [movieId]);
 
   const handleGoBack = () => {
-    navigate(location?.state?.from ?? '/');
+    if (location.state && location.state.from) {
+      navigate(location.state.from);
+    } else {
+      navigate('/');
+    }
   };
 
   return (
