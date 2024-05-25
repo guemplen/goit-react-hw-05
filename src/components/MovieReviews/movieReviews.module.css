@@ -1,0 +1,30 @@
+.reviewsContainer {
+  margin-top: 20px;
+}
+
+.noReviewsMessage {
+  font-size: 1.2em;
+  color: gray;
+  margin-top: 20px;
+}
+
+.reviewsList {
+  list-style: none;
+  padding: 0;
+}
+
+.reviewItem {
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.reviewAuthor {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.reviewContent {
+  font-size: 1em;
+  line-height: 1.5;
+  color: gray;
+}

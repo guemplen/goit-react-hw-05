@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.actorCard {
+  margin: 10px;
+  text-align: center;
+}
+
+.actorImage {
+  width: 150px;
+  height: 225px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.actorName {
+  font-size: 1.2em;
+  margin-top: 0.5em;
+}
+
+.actorRole {
+  font-size: 1em;
+  color: gray;
+}

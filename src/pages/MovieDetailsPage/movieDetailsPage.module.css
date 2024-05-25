@@ -1,0 +1,65 @@
+.container {
+  padding: 20px;
+}
+
+.goBackButton {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.movieDetails {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.posterImage {
+  width: 300px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.movieInfo {
+  flex: 1;
+}
+
+.movieInfo h1 {
+  margin-bottom: 10px;
+}
+
+.movieInfo p {
+  margin-bottom: 10px;
+}
+
+.additionalInfo {
+  margin-top: 20px;
+}
+
+.additionalInfo ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.5em;
+  transition: color 0.3s;
+}
+
+.additionalInfo li {
+  margin-top: 10px;
+}
+
+.additionalInfo li a:hover {
+  margin-top: 20px;
+  text-decoration: underline;
+  color: brown;
+}
+
+.link {
+  color: black;
+}
+
+.active {
+  color: brown;
+}
