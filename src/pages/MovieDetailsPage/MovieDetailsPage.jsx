@@ -32,10 +32,11 @@ const MovieDetailsPage = () => {
   }, [movieId]);
 
   const handleGoBack = () => {
-    if (location.state && location.state.from) {
-      navigate(location.state.from);
+    const { from } = location.state || {};
+    if (from) {
+      navigate(from);
     } else {
-      navigate('/');
+      navigate('/movies');
     }
   };
 
